@@ -13,7 +13,7 @@ Bu projeyi Termux üzerinde çalıştırmak için aşağıdaki paketleri kurman�
 ### Kurulum
 
 1. **Dosyaları birleştir:**
-   cat debian13-kde.part_aa debian13-kde.part_ab > debian13-kde.qcow2
+   cat debian13-kde.part_aa debian13-kde.part_ab > debian13-kde_qcow2.rar
 
 2. **Sanal Makineyi çalıştır:**
    qemu-system-x86_64 -m 4096 -smp 4 -bios bios.fd -drive file=debian13-kde.qcow2,format=qcow2 -net nic -net user -vnc :0
@@ -40,7 +40,7 @@ To run this project on Termux, you need to install the following packages:
 ### Setup
 
 1. **Merge files:**
-   cat debian13-kde.part_aa debian13-kde.part_ab > debian13-kde.qcow2
+   cat debian13-kde.part_aa debian13-kde.part_ab > debian13-kde_qcow2.rar
 
 2. **Run the VM:**
    qemu-system-x86_64 -m 4096 -smp 4 -bios bios.fd -drive file=debian13-kde.qcow2,format=qcow2 -net nic -net user -vnc :0
