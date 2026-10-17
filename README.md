@@ -1,1 +1,54 @@
-# debian13_kde.qcow2
+# Debian13_KDE_qcow2
+
+(Türkçe 🇹🇷)
+### Ön Gereksinimler (Termux)
+Bu projeyi Termux üzerinde çalıştırmak için aşağıdaki paketleri kurmanız gerekir:
+
+1. **QEMU'yu kur ve güncelle:**
+   pkg update && pkg install qemu-utils qemu-common qemu-system-x86-64-headless
+
+2. **VNC Viewer:**
+   Play Store'dan bir VNC Viewer uygulaması indirin (örneğin: RealVNC).
+
+### Kurulum
+
+1. **Dosyaları birleştir:**
+   cat debian13-kde.part_aa debian13-kde.part_ab > debian13-kde.qcow2
+
+2. **Sanal Makineyi çalıştır:**
+   qemu-system-x86_64 -m 4096 -smp 4 -bios bios.fd -drive file=debian13-kde.qcow2,format=qcow2 -net nic -net user -vnc :0
+
+3. **VNC'ye bağlan:**
+   VNC Viewer uygulamanızı açın ve bağlanın:
+   localhost:5900
+   Veya
+   127.0.0.1:5900
+
+*Not: -m değeri RAM kullanım miktarını, -smp değeri kaç çekirdek kullanılacağını, -bios değeri ise gerekli olan önyükleme dosyasını (bios.fd) belirtir.*
+
+
+(English 🇬🇧🇺🇸)
+### Prerequisites (Termux)
+To run this project on Termux, you need to install the following packages:
+
+1. **Install and Update QEMU:**
+   pkg update && pkg install qemu-utils qemu-common qemu-system-x86-64-headless
+
+2. **VNC Client:**
+   Install a VNC Viewer app from the Play Store (e.g.: RealVNC).
+
+### Setup
+
+1. **Merge files:**
+   cat debian13-kde.part_aa debian13-kde.part_ab > debian13-kde.qcow2
+
+2. **Run the VM:**
+   qemu-system-x86_64 -m 4096 -smp 4 -bios bios.fd -drive file=debian13-kde.qcow2,format=qcow2 -net nic -net user -vnc :0
+
+3. **Connect to VNC:**
+   Open your VNC Viewer app and connect to:
+   localhost:5900
+   Or
+   127.0.0.1:5900
+
+*Note: -m value for how much RAM using, -smp value for how many cores using, and -bios value for specifying the bios.fd file.*
